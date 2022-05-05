@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skills</title>
+
+</head>
+<body>
+
+    {% extends 'portfolio/layout.html' %}
+
+    {% block main %}
+    	<h3>Skills</h3>
+        <p>Hi! My name is Inês and what I love to do, more than anything, is to study Computer Science!</p>
+
+        <p>These are some of my best skills:</p>
+
+         <ul>
+                {% for skill in skills %}
+                      <li> {{ skill }} </li>
+                {% endfor %}
+        </ul>
+    {% endblock main %}
+
+</body>
+</html>

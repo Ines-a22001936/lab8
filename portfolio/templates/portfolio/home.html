@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+</head>
+<body>
+
+    {% extends 'portfolio/layout.html' %}
+
+    {% block main %}
+    	<h3>Home</h3>
+        <p>
+            {% if hora > 12 %}
+                Welcome, I hope you're having a great day!
+            {% else %}
+                Welcome, I hope your day is starting well!
+            {% endif %}
+        </p>
+
+        <p>(Current time:  {{ hora }}
+            {% if hora > 12 %}
+                p.m
+            {% else %}
+                a.m
+            {% endif %})</p>
+
+        {% load static %}
+        <img src="{% static 'portfolio/images/stray.png' %}" alt="">
+
+        <h3>Contact</h3>
+        <p>Please, do contact me: inesou02@hotmail.com</p>
+
+    {% endblock main %}
+
+</body>
+</html>
