@@ -1,0 +1,33 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block main %}
+	<h1>Blog</h1>
+    <div class = "listaposts">
+
+        {% for post in posts %}
+            <div>
+                <h2>{{ post.titulo }}</h2>
+                <p>{{ post.descricao }}
+                <br>
+                {% if post.link != null %}
+                    link: {{ post.link }}
+                {% endif %}</p>
+                <br>
+                Post by {{ post.autor }} at {{ post.criado }}
+                <br>
+            </div>
+        {% endfor %}
+
+    </div>
+
+
+    <form action="" method="POST">
+
+        <h2>New post</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="Publicar" class="botao">
+    </form>
+
+{% endblock main %}
