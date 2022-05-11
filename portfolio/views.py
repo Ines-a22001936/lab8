@@ -9,7 +9,7 @@ import datetime
 from django.urls import reverse
 
 from .forms import PostForm
-from .models import Post
+from .models import Post, PontuacaoQuizz
 
 
 def home_page_view(request):
@@ -52,3 +52,24 @@ def blog_page_view(request):
         'form': form
     }
     return render(request, 'portfolio/blog.html', context)
+
+
+def quizz_page_view(request):
+
+    if request.method == 'POST':
+        n = request.POST['nome']
+        p = pontuacao_quizz(request)
+        r = PontuacaoQuizz(nome=n, pontuacao=p)
+        r.save()
+
+    return render(request, 'portfolio/quizz.html')
+
+
+def pontuacao_quizz(request):
+    pontuacao = 0
+
+    return pontuacao
+
+
+def contact_page_view(request):
+    return render(request, 'portfolio/contact.html')

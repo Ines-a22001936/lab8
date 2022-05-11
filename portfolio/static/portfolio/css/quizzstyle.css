@@ -1,0 +1,15 @@
+.quizz {
+    display: block;
+    width: 800px;
+    vertical-align: middle;
+    margin: auto;
+    border: 2px solid lightsteelblue;
+    border-radius: 15px;
+    padding: 10px 20px;
+}
+
+.quizz > label > p {
+    padding-top: 25px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
