@@ -1,10 +1,12 @@
 .heroImage {
     display: grid;
     height: 90vh;
-    background-image: url("../images/heroimage.jpg");
-    background-repeat: no-repeat;
+    background-image: url("../images/herogif.gif");
+    background-attachment: fixed;
+    background-repeat: repeat;
     background-position: center;
     background-size: cover;
+
     text-align: center;
     background-color: ghostwhite;
     justify-content: center;
@@ -15,4 +17,36 @@
 
 .motivational {
     font-size: 50px;
+    color: black;
+}
+
+article.primeiro {
+  height: 35vh;
+  background: #e8bee4;
+  padding: 0 4vw;
+  text-align: center;
+}
+
+article.primeiro > p {
+  font-size: 25px;
+}
+
+article.primeiro > p > b > i {
+  font-size: 25px;
+}
+
+article.segundo {
+  height: 60vh;
+  background-image: url("../images/herogif.gif");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  align-items: start;
+
+}
+
+.intro {
+    padding-right: 30px;
+    padding-left: 30px;
 }
