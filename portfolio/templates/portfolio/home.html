@@ -13,31 +13,51 @@
 
         <div class = "heroImage">
             <div><h1 class="motivational">Coding is today's language of creativity!</h1></div>
-
-            <div style="color: black"></div>
         </div>
 
-        <br>
-        <h1>Home</h1>
-        <br>
+        <article class="primeiro">
+            <p>
+                <br>
+                <br>
+                <b><i>Coding is today's language of creativity!</i></b>
+                <br>
+                This is why I choose to persue this degree.
+                I strongly believe that programming gives you freedom to create anything you wish or need!
+                <br>
+                In my Computer Science and Enginnering's degree, what I mostly liked to do was coding, especially
+                softwares related to games.
+                <br>
+                In the future, I would love to work for a company that would be able to still teach me new things everyday in order to keep
+                my interest and love for this job.
+            </p>
+        </article>
 
-        <p>
-            {% if hora > 12 %}
-                I hope you're having a great day!
-            {% else %}
-                I hope your day is starting well!
-            {% endif %}
-        </p>
+        <article class='segundo'>
+        </article>
 
-        <p>(Current time:  {{ hora }}
-            {% if hora > 12 %}
-                p.m
-            {% else %}
-                a.m
-            {% endif %})</p>
+        <div class = "intro">
+            <br>
+            <h1>Home</h1>
+            <br>
 
-        {% load static %}
-        <br>
+            <p>
+                {% if hora > 12 %}
+                    I hope you're having a great day!
+                {% else %}
+                    I hope your day is starting well!
+                {% endif %}
+            </p>
+
+            <p>(Current time:  {{ hora }}
+                {% if hora > 12 %}
+                    p.m
+                {% else %}
+                    a.m
+                {% endif %})</p>
+
+            {% load static %}
+            <br>
+        </div>
 
     {% endblock main %}
 

@@ -1,3 +1,8 @@
+.introdegree {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
 .cadeiras {
   display: flex;
   flex-flow: row wrap;

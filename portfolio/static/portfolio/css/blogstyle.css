@@ -1,3 +1,8 @@
+.introblog {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
 .listaposts {
   display: flex;
   flex-flow: row wrap;
@@ -22,8 +27,8 @@
 
 .botao {
   margin-top: 10px;
-  width: 60px;
-  height: 30px;
+  width: 80px;
+  height: 35px;
   border: 2px solid black;
   background-color: black;
   color: white;
