@@ -1,0 +1,38 @@
+.projetos {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: normal;
+    backround-color: white;
+    padding: 50px;
+}
+
+.projetos img {
+    border-radius: 15px 0 0 15px;
+    height: 100%;
+    width: 405px;
+}
+
+.projetos > div {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px #546287;
+    margin: 10px;
+    width: 80%;
+}
+
+.projetos div div:last-child {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 0 15px 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleproject {
+    font-weight: bolder;
+    font-size: 10px;
+}
