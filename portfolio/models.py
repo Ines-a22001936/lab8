@@ -12,3 +12,10 @@ class Post(models.Model):
     def __str__(self):
         return self.titulo[:50]
 
+
+class PontuacaoQuizz(models.Model):
+    nome = models.CharField(max_length=100)
+    pontuacao = models.TextField()
+
+    def __str__(self):
+        return self.nome[:50]

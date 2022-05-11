@@ -1,33 +1,44 @@
-{% extends 'portfolio/layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
 
-{% block main %}
-	<h1>Blog</h1>
-    <div class = "listaposts">
+    {% extends 'portfolio/layout.html' %}
 
-        {% for post in posts %}
-            <div>
-                <h2>{{ post.titulo }}</h2>
-                <p>{{ post.descricao }}
-                <br>
-                {% if post.link != null %}
-                    link: {{ post.link }}
-                {% endif %}</p>
-                <br>
-                Post by {{ post.autor }} at {{ post.criado }}
-                <br>
-            </div>
-        {% endfor %}
+    {% block main %}
+    	<h1>Blog</h1>
+        <div class = "listaposts">
 
-    </div>
+            {% for post in posts %}
+                <div>
+                    <h2>{{ post.titulo }}</h2>
+                    <p>{{ post.descricao }}
+                    <br>
+                    {% if post.link != null %}
+                        link: {{ post.link }}
+                    {% endif %}</p>
+                    <br>
+                    Post by {{ post.autor }} on {{ post.criado }}
+                    <br>
+                </div>
+            {% endfor %}
+
+        </div>
 
 
-    <form action="" method="POST">
+        <form action="" method="POST">
 
-        <h2>New post</h2>
-        {% csrf_token %}
-        {{ form.as_p }}
+            <h2>New post</h2>
+            {% csrf_token %}
+            {{ form.as_p }}
 
-        <input type="submit" value="Publicar" class="botao">
-    </form>
+            <input type="submit" value="Publicar" class="botao">
+        </form>
 
-{% endblock main %}
+    {% endblock main %}
+
+</body>
+</html>

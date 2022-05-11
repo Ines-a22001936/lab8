@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizz</title>
+</head>
+<body>
+
+    {% extends 'portfolio/layout.html' %}
+
+    {% block main %}
+        <h1>Quizz</h1>
+
+        <form class = "quizz" method="POST">
+            {% csrf_token %}
+            <label>
+                <p>Enter your name</p>
+                <input type="text" name="nome" maxlength="100" placeholder="e.g John">
+
+            </label>
+
+            <label>
+                <p>Django is written in which language?</p>
+
+                <label for="java">
+                    Java
+                    <input type="radio" value="java" name="language" id = "java">
+                </label>
+                <label for="python">
+                    Python
+                    <input type="radio" value="python" name="language" id = "python">
+                </label>
+                <label for="c">
+                    C
+                    <input type="radio" value="c" name="language" id = "c">
+                </label>
+                <label for="php">
+                    PHP
+                    <input type="radio" value="php" name="language" id = "php">
+                </label>
+            </label>
+
+            <label>
+                <p>What does HTML stand for?</p>
+
+                <select form="doctype">
+                    <option value="home">Home Tool Markup Language</option>
+                    <option value="hyperlink">Hyperlinks and Text Markup Language</option>
+                    <option value="hypertext">HyperText Markup Language</option>
+                </select>
+            </label>
+
+            <label>
+                <p>"!DOCTYPE is case-sensitive in HTML."</p>
+                <label for="true">
+                    True
+                    <input type="radio" value="true" name="language" id = "true">
+                </label>
+                <label for="false">
+                    False
+                    <input type="radio" value="false" name="language" id = "false">
+                </label>
+            </label>
+
+    </form>
+
+
+    {% endblock main %}
+
+</body>
+</html>
