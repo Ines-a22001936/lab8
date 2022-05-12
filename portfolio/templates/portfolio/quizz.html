@@ -46,10 +46,10 @@
                 <label>
                     <p>What does HTML stand for?</p>
 
-                    <select form="doctype">
-                        <option value="home">Home Tool Markup Language</option>
-                        <option value="hyperlink">Hyperlinks and Text Markup Language</option>
-                        <option value="hypertext">HyperText Markup Language</option>
+                    <select for="html">
+                        <option name="html" value="home" id="home">Home Tool Markup Language</option>
+                        <option name="html" value="hyperlink" id="hyperlink">Hyperlinks and Text Markup Language</option>
+                        <option name="html" value="hypertext" id="hypertext">HyperText Markup Language</option>
                     </select>
                 </label>
 
@@ -57,11 +57,11 @@
                     <p>"!DOCTYPE is case-sensitive in HTML."</p>
                     <label for="true">
                         True
-                        <input type="radio" value="true" name="language" id = "true">
+                        <input type="radio" value="true" name="doctype" id = "true">
                     </label>
                     <label for="false">
                         False
-                        <input type="radio" value="false" name="language" id = "false">
+                        <input type="radio" value="false" name="doctype" id = "false">
                     </label>
                 </label>
 
@@ -69,7 +69,7 @@
                     <p>What is the output of the following code?</p>
                     <img src="../../static/portfolio/images/question1.png" alt="">
 
-                    <input id="maJ" name="maJ" type="text" size="30" maxlength="24" placeholder="output>>">
+                    <input id="maJ" value = "" name="output1" type="text" size="30" maxlength="24" placeholder="output>>">
                 </label>
 
                 <label>
@@ -77,30 +77,30 @@
 
                     <label for="useless">
                         It is useless and can be deleted.
-                        <input type="radio" value="useless" name="language" id = "useless">
+                        <input type="radio" value="useless" name="init" id = "useless">
                     </label>
                     <label for="empty">
                         It is used to initialise any empty values.
-                        <input type="radio" value="empty" name="language" id = "empty">
+                        <input type="radio" value="empty" name="init" id = "empty">
                     </label>
                     <label for="package">
                         It allows Python to recognise the folder as package.
-                        <input type="radio" value="package" name="language" id = "package">
+                        <input type="radio" value="package" name="init" id = "package">
                     </label>
                     <label for="none">
                         None of the above.
-                        <input type="radio" value="none" name="language" id = "none">
+                        <input type="radio" value="none" name="init" id = "none">
                     </label>
                 </label>
 
                 <label>
                     <p>When creating a Web document, what format is used to express an image's height and width?</p>
 
-                    <select form="format">
-                        <option value="centimeters">Centimeters</option>
-                        <option value="pixels">Pixels</option>
-                        <option value="dots">Dots per inch</option>
-                        <option value="inches">Inches</option>
+                    <select for ="format">
+                        <option name = "format" value="centimeters" id="centimeters">Centimeters</option>
+                        <option name = "format" value="pixels" id="pixels">Pixels</option>
+                        <option name = "format" value="dots" id="dots">Dots per inch</option>
+                        <option name = "format" value="inches" id="inches">Inches</option>
                     </select>
                 </label>
 
@@ -120,10 +120,14 @@
                     <p>What is the output of the following code?</p>
                     <img src="../../static/portfolio/images/question2.png" alt="">
 
-                    <input id="10, 11, 12, 13, 14," name="10, 11, 12, 13, 14," type="text" size="30" maxlength="24" placeholder="output>>">
+                    <input id="10, 11, 12, 13, 14," value = "" name="output2" type="text" size="30" maxlength="24" placeholder="output>>">
                 </label>
 
+                <input type="submit" value="Submit" class = "botaosubmeter">
+                <input type="reset" value="Clear all" class = "botaolimpar">
+
             </form>
+
         </div>
 
 
