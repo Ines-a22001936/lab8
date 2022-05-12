@@ -1,9 +1,11 @@
 .introprojects {
-  padding-right: 30px;
-  padding-left: 30px;
+    background-color: #c5ebfe;
+    padding-right: 30px;
+    padding-left: 30px;
 }
 
 .projetos {
+    background-color: #c5ebfe;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -22,8 +24,8 @@
     display: flex;
     justify-content: space-around;
     border-radius: 15px;
-    box-shadow: 10px 10px 20px #546287;
-    margin: 10px;
+    box-shadow: 10px 10px 20px #5666d0;
+    margin: 15px;
     width: 80%;
 }
 

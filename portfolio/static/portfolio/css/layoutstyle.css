@@ -42,9 +42,7 @@ nav a {
 main {
     height: 100%;
     background-color: ghostwhite;
-    padding-top: 8vh;
-    padding-right: 0;
-    padding-left: 0;
+    padding: 8vh 0 50px;
 }
 
 footer {
@@ -68,7 +66,6 @@ form {
     width: 550px;
     vertical-align: middle;
     margin: auto;
-    border: 2px solid darkseagreen;
     border-radius: 15px;
     padding: 15px;
 }

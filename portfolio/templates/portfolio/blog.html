@@ -31,15 +31,16 @@
 
         </div>
 
-
-        <form action="" method="POST">
+        <div class = "novopost">
+            <form action="" method="POST">
 
             <h2>New post</h2>
             {% csrf_token %}
             {{ form.as_p }}
 
             <input type="submit" value="Publicar" class="botao">
-        </form>
+            </form>
+        </div>
 
     {% endblock main %}
 
