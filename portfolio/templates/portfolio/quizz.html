@@ -9,6 +9,7 @@
     {% extends 'portfolio/layout.html' %}
 
     {% block main %}
+        {% load static %}
         <div class = "introquizz">
             <h1>Quizz</h1>
         </div>
@@ -68,7 +69,7 @@
 
                 <label>
                     <p>What is the output of the following code?</p>
-                    <img src="../../static/portfolio/images/question1.png" alt="">
+                    <img src="{% static 'portfolio/images/question1.png' %}" alt="">
 
                     <input id="maJ" value = "" name="output1" type="text" size="30" maxlength="24" placeholder="output>>">
                 </label>
@@ -119,7 +120,7 @@
 
                 <label>
                     <p>What is the output of the following code?</p>
-                    <img src="../../static/portfolio/images/question2.png" alt="">
+                    <img src="{% static 'portfolio/images/question2.png' %}" alt="">
 
                     <input id="10, 11, 12, 13, 14," value = "" name="output2" type="text" size="30" maxlength="24" placeholder="output>>">
                 </label>

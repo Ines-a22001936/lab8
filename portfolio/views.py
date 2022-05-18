@@ -1,16 +1,13 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-
-# Create your views here.
-
-from django.shortcuts import render
-import datetime
-
 from django.urls import reverse
 
-from .forms import PostForm
-from .models import Post, PontuacaoQuizz
-from matplotlib import pyplot as plt
+# from matplotlib import pyplot as plt
+
+import datetime
+
+from portfolio.forms import PostForm
+from portfolio.models import Post, PontuacaoQuizz
 
 
 def home_page_view(request):
@@ -88,10 +85,9 @@ def pontuacao_quizz(request):
     if request.POST['defined'] == 'false2':
         pontuacao += 1
 
-    if request.POST['output2'] == '10, 11, 12, 13, 14,':
+    if request.POST['output2'] == '10, 11, 12, 13, 14, ':
         pontuacao += 1
 
-    desenha_grafico_resultados()
     return pontuacao
 
 
@@ -107,8 +103,8 @@ def desenha_grafico_resultados():
     nomes.reverse()
     pontuacoes.reverse()
 
-    plt.barh(nomes, pontuacoes)
-    plt.savefig('graficopontuacoes.png', bbox_inches="tight")
+    # plt.barh(nomes, pontuacoes)
+    # plt.savefig('graficopontuacoes.png', bbox_inches="tight")
 
 
 def contact_page_view(request):
