@@ -24,15 +24,18 @@ def degree_page_view(request):
 
     context = {
         'cadeiras': Cadeira.objects.all(),
-        'professor': Cadeira.docente,
-        'projeto': Cadeira.projetos
     }
 
     return render(request, 'portfolio/degree.html', context)
 
 
 def projects_page_view(request):
-    return render(request, 'portfolio/projects.html')
+
+    context = {
+        'projetos': Projeto.objects.all(),
+    }
+
+    return render(request, 'portfolio/projects.html', context)
 
 
 def skills_page_view(request):

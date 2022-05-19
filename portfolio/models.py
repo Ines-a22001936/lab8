@@ -23,27 +23,27 @@ class PontuacaoQuizz(models.Model):
 
 # DER
 class Projeto(models.Model):
-    nome = models.CharField(max_length=20)
+    nome = models.CharField(max_length=50, primary_key=True)
     imagem = models.ImageField()
     descricao = models.TextField()
 
     def __str__(self):
-        return self.nome[:20]
+        return self.nome[:50]
 
 
 class Professor(models.Model):
-    nome = models.CharField(max_length=20)
+    nome = models.CharField(max_length=50, primary_key=True)
     linkLusofona = models.URLField(blank=True)
     linkLinkedin = models.URLField(blank=True)
     projetos_fk = models.ForeignKey(Projeto, on_delete=models.CASCADE)
     projetos = models.ManyToManyField(Projeto, related_name='apoia')
 
     def __str__(self):
-        return self.nome[:20]
+        return self.nome[:50]
 
 
 class Cadeira(models.Model):
-    nome = models.CharField(max_length=20)
+    nome = models.CharField(max_length=50, primary_key=True)
     ranking = models.IntegerField()
     ano = models.IntegerField()
     topicos = models.TextField()
@@ -53,5 +53,5 @@ class Cadeira(models.Model):
     projetos = models.ManyToManyField(Projeto, related_name='tem')
 
     def __str__(self):
-        return self.nome[:20]
+        return self.nome[:50]
 

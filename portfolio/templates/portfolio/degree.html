@@ -23,14 +23,14 @@
                     <p>{{ cadeira.ranking }} estrelas</p>
                     <p>Etcs: {{ cadeira.etcs }}</p>
                     <p>Tópicos:<br>{{ cadeira.topicos }}</p>
-                    <p>Professor teórica: {{ cadeira.professor.nome }}</p>
+                    <p>Professor teórica: {{ cadeira.decente_fk.nome }}</p>
                     <p>
-                    {% if cadeira.professor.linkLusofona != null %}
-                        link: {{ cadeira.professor.linkLusofona }}
+                    {% if professor.linkLusofona != null %}
+                        link: {{ professor.linkLusofona }}
                     {% endif %}
                     <br>
-                    {% if cadeira.professor.linkLinkdin != null %}
-                        link: {{ cadeira.professor.linkLinkdin }}
+                    {% if professor.linkLinkedin != null %}
+                        link: {{ professor.linkLinkedin }}
                     {% endif %}
                     </p>
                     {% if cadeira.projetos != null %}
