@@ -14,6 +14,35 @@
             <p>Currently I'm studying Computer Science and Engineering at Lusófona.</p>
         </div>
 
+        <div class = "cadeiras">
+
+            {% for cadeira in cadeiras %}
+                <div >
+                    <h2>{{ cadeira.nome }}</h2>
+                    <p>Ano: {{ cadeira.ano }}º<p>
+                    <p>{{ cadeira.ranking }} estrelas</p>
+                    <p>Etcs: {{ cadeira.etcs }}</p>
+                    <p>Tópicos:<br>{{ cadeira.topicos }}</p>
+                    <p>Professor teórica: {{ cadeira.professor.nome }}</p>
+                    <p>
+                    {% if cadeira.professor.linkLusofona != null %}
+                        link: {{ cadeira.professor.linkLusofona }}
+                    {% endif %}
+                    <br>
+                    {% if cadeira.professor.linkLinkdin != null %}
+                        link: {{ cadeira.professor.linkLinkdin }}
+                    {% endif %}
+                    </p>
+                    {% if cadeira.projetos != null %}
+                        Projeto: {{ cadeira.projetos.nome }}
+                    {% endif %}
+                    <br>
+                </div>
+            {% endfor %}
+
+        </div>
+
+
         <div class="cadeiras">
             <div>
               <h2>Programação Web</h2>

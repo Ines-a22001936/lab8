@@ -19,3 +19,39 @@ class PontuacaoQuizz(models.Model):
 
     def __str__(self):
         return self.nome[:50]
+
+
+# DER
+class Projeto(models.Model):
+    nome = models.CharField(max_length=20)
+    imagem = models.ImageField()
+    descricao = models.TextField()
+
+    def __str__(self):
+        return self.nome[:20]
+
+
+class Professor(models.Model):
+    nome = models.CharField(max_length=20)
+    linkLusofona = models.URLField(blank=True)
+    linkLinkedin = models.URLField(blank=True)
+    projetos_fk = models.ForeignKey(Projeto, on_delete=models.CASCADE)
+    projetos = models.ManyToManyField(Projeto, related_name='apoia')
+
+    def __str__(self):
+        return self.nome[:20]
+
+
+class Cadeira(models.Model):
+    nome = models.CharField(max_length=20)
+    ranking = models.IntegerField()
+    ano = models.IntegerField()
+    topicos = models.TextField()
+    etcs = models.IntegerField()
+    docente_fk = models.ForeignKey(Professor, on_delete=models.CASCADE)
+    docente = models.ManyToManyField(Professor, related_name='leciona')
+    projetos = models.ManyToManyField(Projeto, related_name='tem')
+
+    def __str__(self):
+        return self.nome[:20]
+
