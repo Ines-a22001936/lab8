@@ -7,7 +7,7 @@ from django.urls import reverse
 import datetime
 
 from portfolio.forms import PostForm
-from portfolio.models import Post, PontuacaoQuizz
+from portfolio.models import *
 
 
 def home_page_view(request):
@@ -21,7 +21,14 @@ def home_page_view(request):
 
 
 def degree_page_view(request):
-    return render(request, 'portfolio/degree.html')
+
+    context = {
+        'cadeiras': Cadeira.objects.all(),
+        'professor': Cadeira.docente,
+        'projeto': Cadeira.projetos
+    }
+
+    return render(request, 'portfolio/degree.html', context)
 
 
 def projects_page_view(request):
