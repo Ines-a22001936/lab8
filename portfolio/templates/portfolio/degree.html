@@ -9,36 +9,19 @@
     {% extends 'portfolio/layout.html' %}
 
     {% block main %}
+        {% load static %}
+
         <div class = "introdegree">
-            <h1>Degree</h1>
+            <h1>About me</h1>
             <p>Currently I'm studying Computer Science and Engineering at Lusófona.</p>
+            <br>
+            <h2>Degree</h2>
+            <p>You can check out the subjects that I had on my degree with great detail.</p>
         </div>
 
         <div class = "cadeiras">
 
-            {% for cadeira in cadeiras %}
-                <div >
-                    <h2>{{ cadeira.nome }}</h2>
-                    <p>Ano: {{ cadeira.ano }}º<p>
-                    <p>{{ cadeira.ranking }} estrelas</p>
-                    <p>Etcs: {{ cadeira.etcs }}</p>
-                    <p>Tópicos:<br>{{ cadeira.topicos }}</p>
-                    <p>Professor teórica: {{ cadeira.decente_fk.nome }}</p>
-                    <p>
-                    {% if professor.linkLusofona != null %}
-                        link: {{ professor.linkLusofona }}
-                    {% endif %}
-                    <br>
-                    {% if professor.linkLinkedin != null %}
-                        link: {{ professor.linkLinkedin }}
-                    {% endif %}
-                    </p>
-                    {% if cadeira.projetos != null %}
-                        Projeto: {{ cadeira.projetos.nome }}
-                    {% endif %}
-                    <br>
-                </div>
-            {% endfor %}
+
 
         </div>
 
@@ -58,8 +41,51 @@
               <h2>Algoritmia e Estrutura de Dados</h2>
               <p>Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto</p>
             </div>
-
         </div>
+
+        <div class = "introdegree">
+            <h2>My education</h2>
+            <p>This is where I graduated from high school and had the best experiences of my teenager life.</p>
+        </div>
+
+        <div class = "escolas">
+            <div>
+                <div>
+                    <p><b>Nobel - Science and Technologys (2012-2020)</b><br>
+
+                        <br><b>General formation:</b>
+
+                        <br>English (17v)
+                        <br>Philosophy (18v)
+                        <br>Physical Education (15v)
+                        <br>Portuguese (15v)<br>
+
+                        <br><b>Specific:</b>
+
+                        <br>Descriptive Geometry A (20v - Final exam: 18.7v)
+                        <br>Mathematics A (17v - Final exam: 19.5v)
+                    </p>
+                </div>
+                <div><img src="{% static 'portfolio/images/cs-logotipo_nobel.jpg' %}" alt = ""></div>
+            </div>
+        </div>
+
+        <div class = "introdegree">
+            <h2>Certificates</h2>
+            <p>Let's go through some of my achivements!</p>
+        </div>
+
+        <div class = "certificados">
+            <div>
+                <div>
+                    <p>
+                    </p>
+                </div>
+                <div><img src="{% static 'portfolio/images/cs-logotipo_nobel.jpg' %}" alt = ""></div>
+            </div>
+        </div>
+
+
     {% endblock main %}
 
 </body>

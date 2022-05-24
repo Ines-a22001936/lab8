@@ -22,3 +22,38 @@
   border-radius: 10px;
   box-shadow: 5px 5px 15px #9695e2;
 }
+
+.escolas {
+    background-color: #c5ebfe;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: normal;
+    backround-color: white;
+    padding: 50px;
+}
+
+.escolas img {
+    border-radius: 0 15px 15px 0;
+    height: 100%;
+    width: 405px;
+}
+
+.escolas > div {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px #9695e2;
+    margin: 15px;
+    width: 80%;
+}
+
+.escolas div div:first-child {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px 0 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

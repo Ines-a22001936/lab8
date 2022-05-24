@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+    {% extends 'portfolio/layout.html' %}
+
+
+    {% block main %}
+
+        <h1>Login</h1>
+
+        {% if message %}
+          <p> {{ message }} </p>
+        {% endif %}
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <label>
+                <input type="text" name="username" placeholder="username">
+            </label>
+            <label>
+                <input type="password" name="password" placeholder="password">
+            </label>
+            <label>
+                <input type="submit" value="Login">
+            </label>
+        </form>
+
+        <a href="{% url 'portfolio:home' %}">Go back Home</a>
+
+
+    {% endblock main %}
+
+
+</body>
+</html>
