@@ -1,13 +1,14 @@
+import matplotlib
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-
-# from matplotlib import pyplot as plt
 
 import datetime
 
 from portfolio.forms import PostForm
 from portfolio.models import *
+from matplotlib import pyplot as plt
+matplotlib.use('Agg')
 
 
 def home_page_view(request):
@@ -20,19 +21,27 @@ def home_page_view(request):
     return render(request, 'portfolio/home.html', context)
 
 
+def login_page_view(request):
+
+    return render(request, 'portfolio/login.html')
+
+
 def degree_page_view(request):
 
     context = {
         'cadeiras': Cadeira.objects.all(),
-        'professor': Cadeira.docente,
-        'projeto': Cadeira.projetos
     }
 
     return render(request, 'portfolio/degree.html', context)
 
 
 def projects_page_view(request):
-    return render(request, 'portfolio/projects.html')
+
+    context = {
+        'projetos': Projeto.objects.all(),
+    }
+
+    return render(request, 'portfolio/projects.html', context)
 
 
 def skills_page_view(request):
@@ -64,7 +73,7 @@ def quizz_page_view(request):
         p = pontuacao_quizz(request)
         r = PontuacaoQuizz(nome=n, pontuacao=p)
         r.save()
-
+        desenha_grafico_resultados()
     return render(request, 'portfolio/quizz.html')
 
 
@@ -110,8 +119,8 @@ def desenha_grafico_resultados():
     nomes.reverse()
     pontuacoes.reverse()
 
-    # plt.barh(nomes, pontuacoes)
-    # plt.savefig('graficopontuacoes.png', bbox_inches="tight")
+    plt.barh(nomes, pontuacoes)
+    plt.savefig('portfolio/static/portfolio/images/graficopontuacoes.png', bbox_inches="tight")
 
 
 def contact_page_view(request):
