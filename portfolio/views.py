@@ -1,4 +1,5 @@
 import matplotlib
+from django.contrib.auth import logout, login, authenticate
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
@@ -23,7 +24,31 @@ def home_page_view(request):
 
 def login_page_view(request):
 
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(
+            request,
+            username=username,
+            password=password)
+
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect(reverse('portfolio:degree'))
+        else:
+            return render(request, 'portfolio/degree.html', {
+                'message': 'Credenciais Inválidas'
+            })
     return render(request, 'portfolio/login.html')
+
+
+def logout_page_view(request):
+    logout(request)
+
+    return render(request, 'portfolio/login.html', {
+        'message': 'Desconectado'
+    })
 
 
 def degree_page_view(request):
@@ -125,3 +150,4 @@ def desenha_grafico_resultados():
 
 def contact_page_view(request):
     return render(request, 'portfolio/contact.html')
+
