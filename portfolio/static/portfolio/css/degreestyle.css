@@ -15,7 +15,7 @@
 .cadeiras div {
   float: left;
   width: 500px;
-  height: 650px;
+  height: 500px;
   padding: 25px;
   margin: 10px;
   background-color: white;
@@ -56,4 +56,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.botaonovo {
+    margin-top: 10px;
+    width: 50px;
+    height: 20px;
+    border: 2px solid #7d7ff1;
+    background-color: #7d7ff1;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+
+}
+
+.botaonovo:hover {
+    cursor: pointer;
+    border: 2px solid #7d7ff1;
+    background-color: white;
+    color: #7d7ff1;
+}
+
+.botaonovo:active {
+    border: 2px solid #5666d0;
+    background-color: #5666d0;
+    color: white;
 }

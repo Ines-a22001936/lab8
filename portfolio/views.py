@@ -1,14 +1,16 @@
 import matplotlib
 from django.contrib.auth import logout, login, authenticate
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 
 import datetime
 
-from portfolio.forms import PostForm
+from portfolio.forms import PostForm, CadeiraForm
 from portfolio.models import *
 from matplotlib import pyplot as plt
+
 matplotlib.use('Agg')
 
 
@@ -23,7 +25,6 @@ def home_page_view(request):
 
 
 def login_page_view(request):
-
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -52,7 +53,6 @@ def logout_page_view(request):
 
 
 def degree_page_view(request):
-
     context = {
         'cadeiras': Cadeira.objects.all(),
     }
@@ -61,7 +61,6 @@ def degree_page_view(request):
 
 
 def projects_page_view(request):
-
     context = {
         'projetos': Projeto.objects.all(),
     }
@@ -151,3 +150,14 @@ def desenha_grafico_resultados():
 def contact_page_view(request):
     return render(request, 'portfolio/contact.html')
 
+
+@login_required
+def novacadeira_page_view(request):
+    form = CadeiraForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('portfolio:degree'))
+
+    context = {'form': form}
+
+    return render(request, 'portfolio/novacadeira.html', context)
