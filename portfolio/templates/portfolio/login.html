@@ -20,17 +20,17 @@
         <form action="" method="post">
             {% csrf_token %}
             <label>
-                <input type="text" name="username" placeholder="username">
+                User: <input type="text" name="username" placeholder="username">
             </label>
             <label>
-                <input type="password" name="password" placeholder="password">
+                Password: <input type="password" name="password" placeholder="password">
             </label>
             <label>
-                <input type="submit" value="Login">
+                <input class = "botaologin" type="submit" value="Login">
             </label>
         </form>
 
-        <a href="{% url 'portfolio:home' %}">Go back Home</a>
+        <a class = "botaovoltar" href="{% url 'portfolio:home' %}">Go back Home</a>
 
 
     {% endblock main %}

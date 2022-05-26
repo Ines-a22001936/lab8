@@ -17,6 +17,12 @@
             <br>
             <h2>Degree</h2>
             <p>You can check out the subjects that I had on my degree with great detail.</p>
+            <br>
+
+            {% if request.user.is_authenticated %}
+                <a class = "botaonovo" href="{% url 'portfolio:novacadeira' %}">Add new class</a>
+            {% endif %}
+
         </div>
 
         <div class = "cadeiras">
@@ -29,41 +35,31 @@
                     <p>Ects: {{ cadeira.etcs }}</p>
                     <p>Tópicos:<br>{{ cadeira.topicos }}</p>
 
-                    <p>Professor teórica: {{ cadeira.docente.nome }}</p>
+                    <p>Professor teórica: {{ cadeira.docente_teorica }}</p>
                     <p>
-                    {% if cadeira.docente.linkLusofona != null %}
-                        link: {{ professor.linkLusofona }}
+                    {% if cadeira.docente_teorica.linkLusofona != null %}
+                        link: {{ cadeira.docente_teorica.linkLusofona }}
                     {% endif %}
                     <br>
-                    {% if cadeira.docente.linkLinkedin != null %}
-                        link: {{ professor.linkLinkedin }}
+                    {% if cadeira.docente_teorica.linkLinkedin != null %}
+                        link: {{ cadeira.docente_teorica.linkLinkedin }}
                     {% endif %}
                     </p>
-                    {% if cadeira.projetos != null %}
-                        Projeto: {{ cadeira.projetos.nome }}
+
+                    <p>Professor prática: {{ cadeira.docentes_praticas }}</p>
+                    <p>
+                    {% if cadeira.docentes_praticas.linkLusofona != null %}
+                        link: {{ cadeira.docentes_praticas.linkLusofona }}
                     {% endif %}
+                    <br>
+                    {% if cadeira.docentes_praticas.linkLinkedin != null %}
+                        link: {{ cadeira.docentes_praticas.linkLinkedin }}
+                    {% endif %}
+                    </p>
                     <br>
                 </div>
             {% endfor %}
 
-        </div>
-
-
-        <div class="cadeiras">
-            <div>
-              <h2>Programação Web</h2>
-              <p>Texto texto texto texto texto texto texto texto texto texto texto texto texto</p>
-            </div>
-
-            <div>
-              <h2>Sinais e Sistemas</h2>
-              <p>Texto texto texto texto texto texto texto texto texto texto texto texto</p>
-            </div>
-
-            <div>
-              <h2>Algoritmia e Estrutura de Dados</h2>
-              <p>Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto</p>
-            </div>
         </div>
 
         <div class = "introdegree">
@@ -89,7 +85,7 @@
                         <br>Mathematics A (17v - Final exam: 19.5v)
                     </p>
                 </div>
-                <div><img src="{% static 'portfolio/images/cs-logotipo_nobel.jpg' %}" alt = ""></div>
+                <div><img src="{% static 'portfolio/images/cs-logotipo_nobel.jpg' %}" alt=""></div>
             </div>
         </div>
 
