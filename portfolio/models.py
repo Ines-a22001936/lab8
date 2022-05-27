@@ -2,6 +2,8 @@ from django.db import models
 
 
 # Create your models here.
+
+
 class Post(models.Model):
     titulo = models.CharField(max_length=50)
     descricao = models.TextField()
@@ -45,10 +47,14 @@ class Cadeira(models.Model):
         return self.nome[:50]
 
 
+def resolution_path(instance):
+    return f'portfolio/static/portfolio/images/{instance.id}/'
+
+
 class Projeto(models.Model):
     nome = models.CharField(max_length=50, primary_key=True)
     cadeira = models.ManyToManyField(Cadeira, related_name='tem')
-    imagem = models.ImageField()
+    imagem = models.ImageField(upload_to=resolution_path)
     descricao = models.TextField()
 
     def __str__(self):
