@@ -92,15 +92,34 @@
         <div class = "introdegree">
             <h2>Certificates</h2>
             <p>Let's go through some of my achivements!</p>
+            <br>
         </div>
 
         <div class = "certificados">
             <div>
                 <div>
-                    <p>
+                    <h3>Extracurricular programs</h3>
+                    <p>I participated for 3 consecutive years on the Science Fair from my school.
+                        <br>I had the opportunity to present fascinating curiositys in an interactive way and with a scientific explanation
+                        (both in english and portuguese) in front of every class from the school.
                     </p>
+                    <br>
                 </div>
-                <div><img src="{% static 'portfolio/images/cs-logotipo_nobel.jpg' %}" alt = ""></div>
+                <div class = "slider">
+                    <div class = "images1">
+                        <input type = "radio" name="slide" id="img1" checked>
+                        <input type = "radio" name="slide" id="img2">
+                        <input type = "radio" name="slide" id="img3">
+                        <img src="{% static 'portfolio/images/feira10.png' %}" class = "m1" alt="img1">
+                        <img src="{% static 'portfolio/images/feira11.png' %}" class = "m2" alt="img2">
+                        <img src="{% static 'portfolio/images/feira12.png' %}" class = "m3" alt="img3">
+                    </div>
+                    <div class = "dots1">
+                        <label for = "img1" ></label>
+                        <label for = "img2" ></label>
+                        <label for = "img3" ></label>
+                    </div>
+                </div>
             </div>
         </div>
 
