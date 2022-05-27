@@ -10,6 +10,7 @@ psycopg2-binary = "*"
 whitenoise = "==5.1.0"
 gunicorn = "==19.9.0"
 django-cloudinary-storage = "*"
+pillow = "*"
 
 [dev-packages]
 

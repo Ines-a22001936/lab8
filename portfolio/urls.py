@@ -30,6 +30,7 @@ urlpatterns = [
     path('quizz', views.quizz_page_view, name='quizz'),
     path('contact', views.contact_page_view, name='contact'),
     path('novacadeira', views.novacadeira_page_view, name='novacadeira'),
+    path('novoprojeto', views.novoprojeto_page_view, name='novoprojeto'),
     path('login', views.login_page_view, name='login'),
     path('logout', views.logout_page_view, name='logout'),
 ]

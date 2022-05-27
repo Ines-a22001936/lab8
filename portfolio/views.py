@@ -7,7 +7,7 @@ from django.urls import reverse
 
 import datetime
 
-from portfolio.forms import PostForm, CadeiraForm
+from portfolio.forms import PostForm, CadeiraForm, ProjetoForm
 from portfolio.models import *
 from matplotlib import pyplot as plt
 
@@ -161,3 +161,15 @@ def novacadeira_page_view(request):
     context = {'form': form}
 
     return render(request, 'portfolio/novacadeira.html', context)
+
+
+@login_required
+def novoprojeto_page_view(request):
+    form = ProjetoForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('portfolio:projects'))
+
+    context = {'form': form}
+
+    return render(request, 'portfolio/novoprojeto.html', context)

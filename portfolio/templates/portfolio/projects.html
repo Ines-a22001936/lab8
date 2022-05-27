@@ -16,7 +16,10 @@
         <div class = "introprojects">
             <h1>Projects</h1>
             <p>Here you will be able to see what projects I've done so far.</p>
-
+            <br>
+            {% if request.user.is_authenticated %}
+                <a class = "botaonovo" href="{% url 'portfolio:novoprojeto' %}">Add new project</a>
+            {% endif %}
         </div>
 
 
@@ -25,7 +28,7 @@
 
                     {% for projeto in projetos %}
                         <div>
-                            <div>{{ projeto.imagem }}</div>
+                            <div>{{ projeto.imagem.url }}</div>
                             <div><p>{{ projeto.nome }} <br>
                                 {{ projeto.descricao }}</p></div>
                         </div>

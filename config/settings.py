@@ -15,7 +15,6 @@ from environs import Env
 env = Env()
 env.read_env()
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -33,6 +32,8 @@ ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'cloudinary_storage',
+    'cloudinary',
     'portfolio',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -115,12 +116,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/portfolio/static/'    # substitua nome_aplicacao pelo nome da sua aplicação
+STATIC_URL = '/portfolio/static/'  # substitua nome_aplicacao pelo nome da sua aplicação
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('portfolio/static'))]
-STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))   # novo
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))  # novo
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # novo
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': "dmdvw8hp9",
+    'API_KEY': "459344413546525",
+    'API_SECRET': "qFnS6vEGlE0KTAob0KXKr0ZU_2o",
+}
+
+MEDIA_URL = '/<portfolio>/'
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
