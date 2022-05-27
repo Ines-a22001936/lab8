@@ -48,7 +48,7 @@ class Cadeira(models.Model):
 
 
 def resolution_path(instance):
-    return f'portfolio/static/portfolio/images/{instance.id}/'
+    return f'user/{instance.id}/'
 
 
 class Projeto(models.Model):
