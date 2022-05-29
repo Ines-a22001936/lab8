@@ -1,4 +1,4 @@
-import matplotlib
+# import matplotlib
 from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
@@ -9,9 +9,11 @@ import datetime
 
 from portfolio.forms import PostForm, CadeiraForm, ProjetoForm
 from portfolio.models import *
-from matplotlib import pyplot as plt
 
-matplotlib.use('Agg')
+
+# from matplotlib import pyplot as plt
+
+# matplotlib.use('Agg')
 
 
 def home_page_view(request):
@@ -143,8 +145,8 @@ def desenha_grafico_resultados():
     nomes.reverse()
     pontuacoes.reverse()
 
-    plt.barh(nomes, pontuacoes)
-    plt.savefig('portfolio/static/portfolio/images/graficopontuacoes.png', bbox_inches="tight")
+    # plt.barh(nomes, pontuacoes)
+    # plt.savefig('portfolio/static/portfolio/images/graficopontuacoes.png', bbox_inches="tight")
 
 
 def contact_page_view(request):
