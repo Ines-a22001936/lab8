@@ -26,14 +26,6 @@
         <section>
                 <div class = "projetos" id = "projetos">
 
-                    {% for projeto in projetos %}
-                        <div>
-                            <div>{{ projeto.imagem.url }}</div>
-                            <div><p>{{ projeto.nome }} <br>
-                                {{ projeto.descricao }}</p></div>
-                        </div>
-                    {% endfor %}
-
                     <div>
                         <div><img src="{% static 'portfolio/images/xadrez.jpg' %}" alt = ""></div>
                         <div><p>Board Game - Chess
