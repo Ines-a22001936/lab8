@@ -30,12 +30,12 @@
             {% for cadeira in cadeiras %}
                 <div >
                     <h2>{{ cadeira.nome }}</h2>
-                    <p>Ano: {{ cadeira.ano }}º<p>
-                    <p>{{ cadeira.ranking }} estrelas</p>
+                    <p>Year: {{ cadeira.ano }}º<p>
+                    <p>{{ cadeira.ranking }} stars</p>
                     <p>Ects: {{ cadeira.etcs }}</p>
-                    <p>Tópicos:<br>{{ cadeira.topicos }}</p>
+                    <p>Topics:<br>{{ cadeira.topicos }}</p>
 
-                    <p>Professor teórica: {{ cadeira.docente_teorica }}</p>
+                    <p>Theory teacher: {{ cadeira.docente_teorica }}</p>
                     <p>
                     {% if cadeira.docente_teorica.linkLusofona != null %}
                         link: {{ cadeira.docente_teorica.linkLusofona }}
@@ -46,7 +46,7 @@
                     {% endif %}
                     </p>
 
-                    <p>Professor prática: {{ cadeira.docentes_praticas }}</p>
+                    <p>Teacher of practices: {{ cadeira.docentes_praticas }}</p>
                     <p>
                     {% if cadeira.docentes_praticas.linkLusofona != null %}
                         link: {{ cadeira.docentes_praticas.linkLusofona }}
@@ -97,8 +97,9 @@
 
         <div class = "certificados">
             <div>
+
                 <div>
-                    <h3>Extracurricular programs</h3>
+                    <h3>Science Fair of Nobel</h3>
                     <p>I participated for 3 consecutive years on the Science Fair from my school.
                         <br>I had the opportunity to present fascinating curiositys in an interactive way and with a scientific explanation
                         (both in english and portuguese) in front of every class from the school.
@@ -107,9 +108,9 @@
                 </div>
                 <div class = "slider">
                     <div class = "images1">
-                        <input type = "radio" name="slide" id="img1" checked>
-                        <input type = "radio" name="slide" id="img2">
-                        <input type = "radio" name="slide" id="img3">
+                        <input type = "radio" name="slide1" id="img1" checked>
+                        <input type = "radio" name="slide1" id="img2">
+                        <input type = "radio" name="slide1" id="img3">
                         <img src="{% static 'portfolio/images/feira10.png' %}" class = "m1" alt="img1">
                         <img src="{% static 'portfolio/images/feira11.png' %}" class = "m2" alt="img2">
                         <img src="{% static 'portfolio/images/feira12.png' %}" class = "m3" alt="img3">
@@ -120,6 +121,103 @@
                         <label for = "img3" ></label>
                     </div>
                 </div>
+
+                <br>
+
+                <div>
+                    <h3>Honor student</h3>
+                    <p>Throughout my high school years, I've achieved one of my biggest accomplishments.<br>
+                        On my 11th year I was nominated the Student of Merit of my class, because of my excellents results of that year.<br>
+                        Also, I participated in the Helping Hand program, in which I showed a great commitment as a mentor to younger pupils.<br>
+                        On 2020, I'm proud to say that I was an Honor level Student from Nobel, with a final average above 17.
+                    </p>
+                    <br>
+                </div>
+
+                <div class = "slider">
+                    <div class = "images2">
+                        <input type = "radio" name="slide2" id="img4" checked>
+                        <input type = "radio" name="slide2" id="img5">
+                        <input type = "radio" name="slide2" id="img6">
+                        <img src="{% static 'portfolio/images/merito.png' %}" class = "m4" alt="img4">
+                        <img src="{% static 'portfolio/images/helpinghand.png' %}" class = "m5" alt="img5">
+                        <img src="{% static 'portfolio/images/honra.png' %}" class = "m6" alt="img6">
+                    </div>
+                    <div class = "dots2">
+                        <label for = "img4" ></label>
+                        <label for = "img5" ></label>
+                        <label for = "img6" ></label>
+                    </div>
+                </div>
+
+                <br>
+
+                <div>
+                    <h3>Music lover</h3>
+                    <p>These are some certificates that I own, which remind me of some events that I loved to be part of.</p>
+                    <br>
+                </div>
+
+                <div class="slider2">
+                    <div class="images3">
+                        <img src="{% static 'portfolio/images/danca.png' %}" class = "m7" alt="img7">
+                        <img src="{% static 'portfolio/images/piano.png' %}" class = "m8" alt="img8">
+                    </div>
+                </div>
+
+                <br>
+
+            </div>
+        </div>
+
+        <div class = "introdegree">
+            <h2>Volunteering</h2>
+            <p>I am currently responsible for managing all social networks of "Lusófona Informática" (2021-2023).</p>
+            <br>
+        </div>
+
+        <div class = "voluntariado">
+            <div>
+                <div><img src="{% static 'portfolio/images/int-logotipo2 lusofona.png' %}" alt=""></div>
+                <div id = "textvoluntariado">
+                    <p><br>I manage all the social networks at the Department of Computer Engineering and Information Systems at Universidade Lusófona.
+                        Including Tiktok, Instagram and Youtube.
+                    <br><br>I created this logo for the Department, and I edited this video using Adobe Premiere Pro.
+                    <br><br>I assure the social networks stay active, and I'm always creating new content every week.</p>
+                </div>
+                <div>
+                    <figure>
+                        <iframe src="https://www.youtube.com/embed/fFEQvthQR6Y"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                        </iframe>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <div class = "introdegree">
+            <h2>Hobbies</h2>
+            <p>I love music! Singing, dancing and playing instruments was always a part of my life.</p>
+            <br>
+        </div>
+
+        <div class = "hobbies">
+            <div>
+                <img src="{% static 'portfolio/images/int-logotipo festadamusica.png' %}" alt="">
+                <p>I've been to a few music institutions, this was the last one that I've been to (2017-2020) and the one that I liked the most.
+                <br>I learned to play the flute, the guitar and the piano. However, I felt more connected to the piano, and I've been playing it since I was a little girl.
+                <br>I'm self-taught too, when I feel like I want to learn something new, I do it without a doubt!
+                <br> <b>(2008-Now)</b> </p>
+            </div>
+
+            <div>
+                <img src="{% static 'portfolio/images/int-logotipo karens.png' %}" alt="">
+                <p>I love dancing. I met great people in this academy, and I had the most gratifying experiences of my entire life.
+                <br>I had the pleasure of learning three dance genres: tap, hip hop and jazz.
+                <br>I developed leadership skills to further improve my dance group's performance.
+                <br> <b>(2015-2020)</b></p>
             </div>
         </div>
 

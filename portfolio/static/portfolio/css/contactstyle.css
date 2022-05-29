@@ -1,4 +1,14 @@
 .introcontact {
-  padding-right: 30px;
-  padding-left: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.socials img {
+    width: 100px;
+    height: 100px;
+    margin: 40px;
+}
+
+.socials a {
+    text-decoration: none;
 }
