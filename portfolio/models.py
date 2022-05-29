@@ -25,7 +25,16 @@ class PontuacaoQuizz(models.Model):
 
 # DER
 
-class Professor(models.Model):
+class ProfessorTeorica(models.Model):
+    nome = models.CharField(max_length=50, primary_key=True)
+    linkLusofona = models.URLField(blank=True)
+    linkLinkedin = models.URLField(blank=True)
+
+    def __str__(self):
+        return self.nome[:50]
+
+
+class ProfessorPratica(models.Model):
     nome = models.CharField(max_length=50, primary_key=True)
     linkLusofona = models.URLField(blank=True)
     linkLinkedin = models.URLField(blank=True)
@@ -40,8 +49,8 @@ class Cadeira(models.Model):
     ano = models.IntegerField()
     topicos = models.TextField()
     etcs = models.IntegerField()
-    docente_teorica = models.ForeignKey(Professor, on_delete=models.CASCADE)
-    docentes_praticas = models.ManyToManyField(Professor, related_name='apoia')
+    docente_teorica = models.ForeignKey(ProfessorTeorica, on_delete=models.CASCADE, default="")
+    docente_pratica = models.ForeignKey(ProfessorPratica, on_delete=models.CASCADE, default="")
 
     def __str__(self):
         return self.nome[:50]
