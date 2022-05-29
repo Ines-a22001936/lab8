@@ -51,7 +51,7 @@ class Cadeira(models.Model):
     etcs = models.IntegerField()
 
     # docente_teorica = models.ForeignKey(ProfessorTeorica, on_delete=models.CASCADE, default="")
-    # docente_pratica = models.ForeignKey(ProfessorPratica, on_delete=models.CASCADE, default="")
+    docente_pratica = models.ForeignKey(ProfessorPratica, on_delete=models.CASCADE, default="")
 
     def __str__(self):
         return self.nome[:50]
