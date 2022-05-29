@@ -27,38 +27,7 @@
 
         <div class = "cadeiras">
 
-            {% for cadeira in cadeiras %}
-                <div >
-                    <h2>{{ cadeira.nome }}</h2>
-                    <p>Year: {{ cadeira.ano }}º<p>
-                    <p>{{ cadeira.ranking }} stars</p>
-                    <p>Ects: {{ cadeira.etcs }}</p>
-                    <p>Topics:<br>{{ cadeira.topicos }}</p>
-
-                    <p>Theory teacher: {{ cadeira.docente_teorica }}</p>
-                    <p>
-                    {% if cadeira.docente_teorica.linkLusofona != null %}
-                        link: {{ cadeira.docente_teorica.linkLusofona }}
-                    {% endif %}
-                    <br>
-                    {% if cadeira.docente_teorica.linkLinkedin != null %}
-                        link: {{ cadeira.docente_teorica.linkLinkedin }}
-                    {% endif %}
-                    </p>
-
-                    <p>Teacher of practices: {{ cadeira.docente_pratica }}</p>
-                    <p>
-                    {% if cadeira.docente_pratica.linkLusofona != null %}
-                        link: {{ cadeira.docentes_praticas.linkLusofona }}
-                    {% endif %}
-                    <br>
-                    {% if cadeira.docente_pratica.linkLinkedin != null %}
-                        link: {{ cadeira.docente_pratica.linkLinkedin }}
-                    {% endif %}
-                    </p>
-                    <br>
-                </div>
-            {% endfor %}
+            <p>classes da cadeira estao a dar erro ao dar deploy no heroku for some stupid reason</p>
 
         </div>
 
