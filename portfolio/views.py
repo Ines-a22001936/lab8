@@ -70,16 +70,6 @@ def projects_page_view(request):
     return render(request, 'portfolio/projects.html', context)
 
 
-def skills_page_view(request):
-    skills = ['none', 'quick problem solving', 'play the piano', 'i like to eat 4 donuts a day (should be a skill)']
-
-    context = {
-        'skills': skills,
-    }
-
-    return render(request, 'portfolio/skills.html', context)
-
-
 def blog_page_view(request):
     form = PostForm(request.POST or None)
     if form.is_valid():
