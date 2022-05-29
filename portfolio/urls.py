@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import render
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 app_name = 'portfolio'
 
@@ -34,3 +37,5 @@ urlpatterns = [
     path('login', views.login_page_view, name='login'),
     path('logout', views.logout_page_view, name='logout'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

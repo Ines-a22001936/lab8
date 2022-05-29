@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 from pathlib import Path
 from environs import Env
+import os
 
 env = Env()
 env.read_env()
@@ -132,6 +133,8 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': "qFnS6vEGlE0KTAob0KXKr0ZU_2o",
 }
 
-MEDIA_URL = '/<portfolio>/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
