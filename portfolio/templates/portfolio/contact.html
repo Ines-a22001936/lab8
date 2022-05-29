@@ -9,9 +9,23 @@
     {% extends 'portfolio/layout.html' %}
 
     {% block main %}
+        {% load static %}
+
         <div class = "introcontact">
             <h1>Contact</h1>
-            <p>Please, do contact me: inesou02@hotmail.com</p>
+            <p>Don't hesitate to contact me!</p>
+        </div>
+
+        <div class = "socials">
+            <a href="https://www.instagram.com/sranene/">
+                <img src="{% static 'portfolio/images/instagram.png' %}" target = "_blank" alt="">
+            </a>
+            <a href="https://github.com/Ines-a22001936">
+                <img src="{% static 'portfolio/images/github.png' %}" target = "_blank" alt="">
+            </a>
+            <a href="https://www.linkedin.com/in/in%C3%AAs-marques-87249a209/">
+                <img src="{% static 'portfolio/images/linkedin.png' %}" target = "_blank" alt="">
+            </a>
         </div>
     {% endblock main %}
 
