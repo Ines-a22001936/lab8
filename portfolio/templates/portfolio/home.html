@@ -10,8 +10,8 @@
     {% extends 'portfolio/layout.html' %}
 
     {% block main %}
-
-        <div class = "heroImage">
+        {% load static %}
+        <div class = "heroImage" style="background-image: url({% static 'portfolio/images/herogif.gif' %});">
             <div><h1 class="motivational">Coding is today's language of creativity!</h1></div>
         </div>
 
@@ -32,7 +32,8 @@
             </p>
         </article>
 
-        <article class='segundo'>
+        {% load static %}
+        <article class='segundo' style="background-image: url({% static 'portfolio/images/herogif.gif' %});">
         </article>
 
         <div class = "intro">
