@@ -82,3 +82,27 @@ form label > label {
     display: block;
     margin-top: 5px;
 }
+
+.botaologinmenu {
+    width: 70px;
+    height: 35px;
+    padding: 5px 10px 5px 10px;
+    border: 2px solid #755cd6;
+    background-color: #755cd6;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.botaologinmenu:hover {
+    cursor: pointer;
+    border: 2px solid #755cd6;
+    background-color: white;
+    color: #755cd6;
+}
+
+.botaologinmenu:active {
+    border: 2px solid #7d7ff1;
+    background-color: #7d7ff1;
+    color: white;
+}
