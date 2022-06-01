@@ -117,10 +117,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/portfolio/static/'  # substitua nome_aplicacao pelo nome da sua aplicação
-STATICFILES_DIRS = [str(BASE_DIR.joinpath('portfolio/static'))]
-STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))  # novo
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # novo
+STATIC_URL = '/portfolio/static/'    # substitua nome_aplicacao pelo nome da sua aplicação
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('portfolio/static'))]  # novo se a pasta static estiver na pasta da aplicação app, altere para str(BASE_DIR.joinpath('app/static'))
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))   # novo
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # nov
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
