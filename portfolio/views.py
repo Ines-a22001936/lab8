@@ -7,7 +7,7 @@ from django.urls import reverse
 
 import datetime
 
-from portfolio.forms import PostForm, CadeiraForm, ProjetoForm
+from portfolio.forms import PostForm, CadeiraForm, ProjetoForm, TFCForm
 from portfolio.models import *
 
 
@@ -65,6 +65,7 @@ def degree_page_view(request):
 def projects_page_view(request):
     context = {
         'projetos': Projeto.objects.all(),
+        'tfcs': TFC.objects.all()
     }
 
     return render(request, 'portfolio/projects.html', context)
@@ -165,3 +166,15 @@ def novoprojeto_page_view(request):
     context = {'form': form}
 
     return render(request, 'portfolio/novoprojeto.html', context)
+
+
+@login_required
+def novotfc_page_view(request):
+    form = TFCForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('portfolio:projects'))
+
+    context = {'form': form}
+
+    return render(request, 'portfolio/novotfc.html', context)

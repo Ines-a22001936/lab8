@@ -24,37 +24,67 @@
 
 
         <section>
-                <div class = "projetos" id = "projetos">
+            <div class = "projetos" id = "projetos">
 
+                {% for projeto in projetos %}
                     <div>
-                        <div><img src="{% static 'portfolio/images/xadrez.jpg' %}" alt = ""></div>
-                        <div><p>Board Game - Chess
-                            <br>This was the first project I did as a group for the Fundamentos de Programação's project (1st semester of the 1st year).
-                            <br>The program, developed in Kotlin, is a version of the well-known “Board Game - Chess”, in which most of the rules of the traditional game are followed.
-                            <br>With that being said, this game gives users the possibility to choose the dimensions of the board as well as the possibility of being able to see the pieces.
-                            <br>The game begins!, in which each piece has its own movement on the board.
-                            <br>The player who manages to "eat" all the opponent's pieces wins!</p></div>
+                        <div><img src="{{ projeto.imagem.url }}" alt=""></div>
+                        <div><p><b>{{ projeto.nome }}</b><br>
+                            {{ projeto.descricao }}</p></div>
                     </div>
+                {% endfor %}
 
-                    <div>
-                        <div><img src="{% static 'portfolio/images/zodiac.jpg' %}" alt = ""></div>
-                        <div><p>Zodiac
-                            <br>This project was developed for the Linguagens de Programação's discipline (2nd semester of the 1st year).
-                            <br>This program (C language) only needs the date of birth and the current date, and easily determines the user's age and sign.
-                            <br>In addition, the program also determines whether the person is fit to work or is eligible for retirement.</div>
-                    </div>
 
-                    <div>
-                        <div><img src="{% static 'portfolio/images/labs.png'%}" alt = ""></div>
-                        <div><p>PW Labs<br>
-                            You can check out this project by yourself.<br>
-                            <a href="https://pw-labs-inesmarques-a22001936.herokuapp.com/">Click on this link!</a>
-                        </p></div>
-                    </div>
-
+                <div>
+                    <div><img src="{% static 'portfolio/images/labs.png'%}" alt = ""></div>
+                    <div><p>PW Labs<br>
+                        You can check out this project by yourself.<br>
+                        <a href="https://pw-labs-inesmarques-a22001936.herokuapp.com/">Click on this link!</a>
+                    </p></div>
                 </div>
 
-            </section>
+            </div>
+
+        </section>
+
+
+        <div class = "introprojects">
+            <h1>Best Final Year Project's from my University</h1>
+            <p>These are some of the best Final Year Projects that I have seen and would like to share with you.</p>
+            <br>
+            {% if request.user.is_authenticated %}
+                <a class = "botaonovo" href="{% url 'portfolio:novotfc' %}">Add new tfc</a>
+            {% endif %}
+        </div>
+
+
+        <section>
+
+            <div class = "tfcs" id = "tfcs">
+
+                {% for tfc in tfcs %}
+                <div >
+                    <h2>{{ tfc.titulo }} - {{ tfc.ano }}</h2>
+                    <p>Autors: {{ tfc.autor1 }} and {{ tfc.autor2 }}</p>
+                    <p>Mentor: {{ tfc.orientador }}</p>
+                    <br>
+                    <p>{{ tfc.resumo }}</p>
+                    <br>
+
+                    <br>
+                    <div>
+                        <a href="{{ tfc.link }}">
+                            <img src="{{ tfc.imagem.url }}" alt="">
+                        </a>
+                    </div>
+
+                    <br>
+                </div>
+            {% endfor %}
+
+            </div>
+
+        </section>
 
     {% endblock main %}
 

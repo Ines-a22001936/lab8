@@ -64,3 +64,17 @@ class Projeto(models.Model):
 
     def __str__(self):
         return self.nome[:50]
+
+
+class TFC(models.Model):
+    titulo = models.CharField(max_length=50, primary_key=True)
+    autor1 = models.CharField(max_length=50)
+    autor2 = models.CharField(max_length=50)
+    orientador = models.CharField(max_length=50)
+    ano = models.IntegerField()
+    resumo = models.TextField()
+    link = models.URLField(blank=True)
+    imagem = models.ImageField()
+
+    def __str__(self):
+        return self.titulo[:50]

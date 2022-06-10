@@ -15,7 +15,7 @@
             <h1>About me</h1>
             <p>Currently I'm studying Computer Science and Engineering at Lusófona.</p>
             <br>
-            <h2>Degree</h2>
+            <h1>Degree</h1>
             <p>You can check out the subjects that I had on my degree with great detail.</p>
             <br>
 
@@ -27,12 +27,35 @@
 
         <div class = "cadeiras">
 
-            <p>classes da cadeira estao a dar erro ao dar deploy no heroku for some stupid reason</p>
+            {% for cadeira in cadeiras %}
+                <div >
+                    <h2>{{ cadeira.nome }} - {{ cadeira.ano }}º year</h2>
+                    <p>{{ cadeira.ranking }} stars</p>
+                    <p>Ects: {{ cadeira.etcs }}</p>
+                    <br>
+                    <p>Topics:<br>{{ cadeira.topicos }}</p>
+                    <br>
+                    {% if cadeira.docente_teorica.linkLinkedin != null %}
+                        <p>Teacher of theory:
+                        <a href="{{ cadeira.docente_teorica.linkLinkedin }}">{{ cadeira.docente_teorica }}</a>
+                        </p>
+                    {% endif %}
+
+                    <br>
+                    {% if cadeira.docente_pratica.linkLinkedin != null %}
+                        <p>Teacher of practices:
+                        <a href="{{ cadeira.docente_pratica.linkLinkedin }}">{{ cadeira.docente_pratica }}</a>
+                        </p>
+                    {% endif %}
+
+                    <br>
+                </div>
+            {% endfor %}
 
         </div>
 
         <div class = "introdegree">
-            <h2>My education</h2>
+            <h1>My education</h1>
             <p>This is where I graduated from high school and had the best experiences of my teenager life.</p>
         </div>
 
@@ -59,7 +82,7 @@
         </div>
 
         <div class = "introdegree">
-            <h2>Certificates</h2>
+            <h1>Certificates</h1>
             <p>Let's go through some of my achivements!</p>
             <br>
         </div>
@@ -68,7 +91,7 @@
             <div>
 
                 <div>
-                    <h3>Science Fair of Nobel</h3>
+                    <h1>Science Fair of Nobel</h1>
                     <p>I participated for 3 consecutive years on the Science Fair from my school.
                         <br>I had the opportunity to present fascinating curiositys in an interactive way and with a scientific explanation
                         (both in english and portuguese) in front of every class from the school.
@@ -94,7 +117,7 @@
                 <br>
 
                 <div>
-                    <h3>Honor student</h3>
+                    <h1>Honor student</h1>
                     <p>Throughout my high school years, I've achieved one of my biggest accomplishments.<br>
                         On my 11th year I was nominated the Student of Merit of my class, because of my excellents results of that year.<br>
                         Also, I participated in the Helping Hand program, in which I showed a great commitment as a mentor to younger pupils.<br>
@@ -122,7 +145,7 @@
                 <br>
 
                 <div>
-                    <h3>Music lover</h3>
+                    <h1>Music lover</h1>
                     <p>These are some certificates that I own, which remind me of some events that I loved to be part of.</p>
                     <br>
                 </div>
@@ -140,7 +163,7 @@
         </div>
 
         <div class = "introdegree">
-            <h2>Volunteering</h2>
+            <h1>Volunteering</h1>
             <p>I am currently responsible for managing all social networks of "Lusófona Informática" (2021-2023).</p>
             <br>
         </div>
@@ -151,7 +174,7 @@
                 <div id = "textvoluntariado">
                     <p><br>I manage all the social networks at the Department of Computer Engineering and Information Systems at Universidade Lusófona.
                         Including Tiktok, Instagram and Youtube.
-                    <br><br>I created this logo for the Department, and I edited this video using Adobe Premiere Pro.
+                    <br><br>I created the logo of our Department, and I edited this video using Adobe Premiere Pro.
                     <br><br>I assure the social networks stay active, and I'm always creating new content every week.</p>
                 </div>
                 <div>
@@ -167,7 +190,7 @@
         </div>
 
         <div class = "introdegree">
-            <h2>Hobbies</h2>
+            <h1>Hobbies</h1>
             <p>I love music! Singing, dancing and playing instruments was always a part of my life.</p>
             <br>
         </div>
