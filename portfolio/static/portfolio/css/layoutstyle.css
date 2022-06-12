@@ -58,8 +58,24 @@ footer {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 43px;
     padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 33px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    font-size: 23px;
+    padding-top: 20px;
     padding-bottom: 30px;
     display: flex;
     justify-content: center;
