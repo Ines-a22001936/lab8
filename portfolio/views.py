@@ -178,3 +178,10 @@ def novotfc_page_view(request):
     context = {'form': form}
 
     return render(request, 'portfolio/novotfc.html', context)
+
+
+def web_page_view(request):
+    context = {
+        'tecnologias': Tecnologia.objects.all()
+    }
+    return render(request, 'portfolio/web.html', context)

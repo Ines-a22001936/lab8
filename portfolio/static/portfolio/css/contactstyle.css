@@ -3,6 +3,10 @@
     padding-left: 30px;
 }
 
+.introcontact > p {
+    padding-left: 200px;
+}
+
 .socials img {
     width: 100px;
     height: 100px;

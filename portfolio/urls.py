@@ -35,6 +35,7 @@ urlpatterns = [
     path('novotfc', views.novotfc_page_view, name='novotfc'),
     path('login', views.login_page_view, name='login'),
     path('logout', views.logout_page_view, name='logout'),
+    path('web', views.web_page_view, name='web'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

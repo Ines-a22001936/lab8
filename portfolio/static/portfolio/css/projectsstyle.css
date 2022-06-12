@@ -4,6 +4,10 @@
     padding-left: 30px;
 }
 
+.introprojects > p {
+    padding-left: 200px;
+}
+
 .projetos {
     background-color: #c5ebfe;
     display: flex;
@@ -71,5 +75,5 @@
 
 .tfcs div div img:hover {
     transform: scale(1.02);
-    box-shadow: 5px 5px 10px #c5ebfe;
+    box-shadow: 5px 5px 10px #9695e2;
 }

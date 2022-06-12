@@ -78,3 +78,15 @@ class TFC(models.Model):
 
     def __str__(self):
         return self.titulo[:50]
+
+
+class Tecnologia(models.Model):
+    nome = models.CharField(max_length=50, primary_key=True)
+    criador = models.CharField(max_length=50)
+    dataLancamento = models.CharField(max_length=50)
+    descricao = models.TextField()
+    link = models.URLField(blank=True)
+    imagem = models.ImageField()
+
+    def __str__(self):
+        return self.nome[:50]

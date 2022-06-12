@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web</title>
+</head>
+<body>
+
+    {% extends 'portfolio/layout.html' %}
+
+    {% block main %}
+        {% load static %}
+
+        <div class = "introweb">
+            <h1>Web Development</h1>
+            <h1>Technologies</h1>
+        </div>
+
+        <div class = "tecnologias">
+
+            {% for tecnologia in tecnologias %}
+                <div>
+                    <div>
+                        <a href="{{ tecnologia.link }}">
+                            <img src="{{ tecnologia.imagem.url }}" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <p><b>{{ tecnologia.nome }}</b>
+                        <br>{{ tecnologia.descricao }}
+                        <br>
+                            <b>Developer: {{ tecnologia.criador }}</b>
+                            <br>
+                            Release date: {{ tecnologia.dataLancamento }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <div class = "introweb">
+            <h1>About this website</h1>
+            <h1>Entity Relationship Diagram (ERD)</h1>
+
+            <img src="{% static 'portfolio/images/DER.png' %}" alt="">
+
+            <h1>Technologies used in the creation of this website</h1>
+        </div>
+
+        <div class = "tecnologiasusadas">
+
+            {% for tecnologia in tecnologias %}
+                {% if tecnologia.nome == "Python" or tecnologia.nome == "HTML: HyperText Markup Language" or tecnologia.nome == "CSS: Cascade Style Sheet" or tecnologia.nome == "Django" or tecnologia.nome == "JavaScript"%}
+                    <div>
+                        <div>
+                            <a href="{{ tecnologia.link }}">
+                                <img src="{{ tecnologia.imagem.url }}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+
+
+
+    {% endblock main %}
+
+</body>
+</html>

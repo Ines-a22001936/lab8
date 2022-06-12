@@ -4,6 +4,10 @@
     background-color: #e8bde4;
 }
 
+.introblog > p {
+    padding-left: 200px;
+}
+
 .listaposts {
     background-color: #e8bde4;
     display: flex;
