@@ -13,22 +13,24 @@
     <link rel="stylesheet" href="{% static 'portfolio/css/blogstyle.css' %}">
     <link rel="stylesheet" href="{% static 'portfolio/css/quizzstyle.css' %}">
     <link rel="stylesheet" href="{% static 'portfolio/css/homestyle.css' %}">
-    <link rel="stylesheet" href="{% static 'portfolio/css/degreestyle.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/css/aboutmestyle.css' %}">
     <link rel="stylesheet" href="{% static 'portfolio/css/projectsstyle.css' %}">
     <link rel="stylesheet" href="{% static 'portfolio/css/contactstyle.css' %}">
     <link rel="stylesheet" href="{% static 'portfolio/css/novacadeirastyle.css' %}">
     <link rel="stylesheet" href="{% static 'portfolio/css/loginstyle.css' %}">
     <link rel="stylesheet" href="{% static 'portfolio/css/webstyle.css' %}">
 
+    <script rel="stylesheet" src="{% static 'portfolio/js/tempo.js' %}"></script>
+
 </head>
-<body>
+<body onload="time()">
 
     <header>
         <div>Inês Marques</div>
 
         <nav>
             <a href="{% url 'portfolio:home' %}">Home</a>
-            <a href="{% url 'portfolio:degree' %}">Degree</a>
+            <a href="{% url 'portfolio:aboutme' %}">About Me</a>
             <a href="{% url 'portfolio:projects' %}">Projects</a>
             <a href="{% url 'portfolio:blog' %}">Blog</a>
             <a href="{% url 'portfolio:web' %}">Web</a>
@@ -41,7 +43,7 @@
 
         {% block main %}
         {% endblock main %}
-
+        <div id = "currentTime"></div>
     </main>
 
     <footer>

@@ -85,3 +85,34 @@
 .tecnologiasusadas img:hover {
     transform: scale(1.03);
 }
+
+.botaoentrarquizz {
+    margin-top: 10px;
+    width: 50px;
+    height: 20px;
+    border: 2px solid #7d7ff1;
+    background-color: #7d7ff1;
+    color: white;
+    border-radius: 10px;
+    padding: 80px 500px 80px 500px;
+    text-decoration: none;
+    margin-left: 15%;
+    font-size: 40px;
+}
+
+.botaoentrarquizz:hover {
+    cursor: pointer;
+    border: 2px solid #7d7ff1;
+    background-color: white;
+    color: #7d7ff1;
+}
+
+.botaoentrarquizz:active {
+    border: 2px solid #5666d0;
+    background-color: #5666d0;
+    color: white;
+}
+
+.estrutura {
+    padding-left: 500px;
+}

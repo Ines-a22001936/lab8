@@ -40,7 +40,7 @@ def login_page_view(request):
             login(request, user)
             return HttpResponseRedirect(reverse('portfolio:degree'))
         else:
-            return render(request, 'portfolio/degree.html', {
+            return render(request, 'portfolio/aboutme.html', {
                 'message': 'Credenciais Inválidas'
             })
     return render(request, 'portfolio/login.html')
@@ -54,12 +54,12 @@ def logout_page_view(request):
     })
 
 
-def degree_page_view(request):
+def aboutme_page_view(request):
     context = {
         'cadeiras': Cadeira.objects.all(),
     }
 
-    return render(request, 'portfolio/degree.html', context)
+    return render(request, 'portfolio/aboutme.html', context)
 
 
 def projects_page_view(request):
