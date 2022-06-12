@@ -106,3 +106,18 @@ form label > label {
     background-color: #7d7ff1;
     color: white;
 }
+
+#currentTime {
+    background-color: #a6a8e2;
+    display:flex;
+    position: fixed;
+    bottom: 8%;
+    right: 3vw;
+    max-width: 500px;
+    padding: 25px 20px;
+    border-radius: 50px;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+    font-weight: bold;
+}

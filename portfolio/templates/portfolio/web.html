@@ -44,6 +44,37 @@
 
             <img src="{% static 'portfolio/images/DER.png' %}" alt="">
 
+            <h1>Structure</h1>
+
+            <ul class = "estrutura">
+                <li>Home (Hero page)</li>
+                <li>About Me
+                    <ul>
+                        <li>Degree</li>
+                        <li>My education</li>
+                        <li>Certificates</li>
+                        <li>Volunteering</li>
+                        <li>Hobbies</li>
+                    </ul>
+                </li>
+                <li>Projects
+                    <ul>
+                        <li>My Projects</li>
+                        <li>Best Final Year Project's from my University</li>
+                    </ul>
+                </li>
+                <li>Blog</li>
+                <li>Web
+                    <ul>
+                        <li>Technologies</li>
+                        <li>About this website</li>
+                        <li>Quizz</li>
+                    </ul>
+                </li>
+                <li>Contact</li>
+                <li>Login</li>
+            </ul>
+
             <h1>Technologies used in the creation of this website</h1>
         </div>
 
@@ -60,6 +91,25 @@
                     </div>
                 {% endif %}
             {% endfor %}
+
+        </div>
+
+        <div class = "introweb">
+            <h1>Do you want to test your skills?</h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <a class = "botaoentrarquizz" href="{% url 'portfolio:quizz' %}">Take this quizz!!</a>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
 
         </div>
 

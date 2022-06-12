@@ -1,10 +1,15 @@
 .introcontact {
     padding-right: 30px;
     padding-left: 30px;
+    background-color: #e8bde4;
 }
 
 .introcontact > p {
     padding-left: 200px;
+}
+
+.socials {
+    background-color: #e8bde4;
 }
 
 .socials img {
