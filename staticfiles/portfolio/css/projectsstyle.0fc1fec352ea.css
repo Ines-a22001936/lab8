@@ -4,10 +4,6 @@
     padding-left: 30px;
 }
 
-.introprojects > p {
-    padding-left: 200px;
-}
-
 .projetos {
     background-color: #c5ebfe;
     display: flex;
@@ -56,24 +52,13 @@
   padding: 25px 100px;
 }
 
-.tfcs > div {
+.tfcs div {
   float: left;
   width: 700px;
-  height: 100%;
+  height: 700px;
   padding: 25px;
   margin: 30px;
   background-color: white;
   border-radius: 20px;
   box-shadow: 10px 10px 20px #5666d0;
-}
-
-.tfcs div div img {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-}
-
-.tfcs div div img:hover {
-    transform: scale(1.02);
-    box-shadow: 5px 5px 10px #9695e2;
 }

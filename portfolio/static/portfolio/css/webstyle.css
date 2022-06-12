@@ -1,0 +1,87 @@
+.introweb {
+    background-color: #c5ebfe;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.introweb > p {
+    padding-left: 200px;
+}
+
+.tecnologias {
+    background-color: #c5ebfe;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: normal;
+    backround-color: white;
+    padding: 50px;
+}
+
+.tecnologias img {
+    border-radius: 10px 10px 10px 10px;
+    margin: 10px;
+    height: 300px;
+    width: 300px;
+}
+
+.tecnologias > div {
+    background-color: #e8bde4;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px #9695e2;
+    margin: 15px;
+    width: 45%;
+}
+
+.tecnologias div div:last-child {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 0 15px 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tecnologias div div img:hover {
+    transform: scale(1.03);
+}
+
+.introweb img {
+    margin-left: 25%;
+    border-radius: 20px 20px 20px 20px;
+    border: 3px solid #9695e2;
+}
+
+.tecnologiasusadas {
+    background-color: #c5ebfe;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: normal;
+    backround-color: white;
+    padding: 50px;
+}
+
+.tecnologiasusadas img {
+    border-radius: 10px 10px 10px 10px;
+    margin: 10px;
+    height: 300px;
+    width: 300px;
+}
+
+.tecnologiasusadas > div {
+    background-color: #9695e2;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px #5666d0;
+    margin: 15px;
+    width: 18%;
+}
+
+.tecnologiasusadas img:hover {
+    transform: scale(1.03);
+}

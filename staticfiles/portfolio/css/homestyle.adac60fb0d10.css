@@ -1,12 +1,3 @@
-.intro {
-    padding-right: 30px;
-    padding-left: 30px;
-}
-
-.intro > p {
-    padding-left: 200px;
-}
-
 .heroImage {
     display: grid;
     height: 95vh;
@@ -51,4 +42,9 @@ article.segundo {
   background-size: cover;
   align-items: start;
 
+}
+
+.intro {
+    padding-right: 30px;
+    padding-left: 30px;
 }

@@ -20,7 +20,6 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-
 app_name = 'portfolio'
 
 urlpatterns = [
@@ -33,8 +32,10 @@ urlpatterns = [
     path('contact', views.contact_page_view, name='contact'),
     path('novacadeira', views.novacadeira_page_view, name='novacadeira'),
     path('novoprojeto', views.novoprojeto_page_view, name='novoprojeto'),
+    path('novotfc', views.novotfc_page_view, name='novotfc'),
     path('login', views.login_page_view, name='login'),
     path('logout', views.logout_page_view, name='logout'),
+    path('web', views.web_page_view, name='web'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

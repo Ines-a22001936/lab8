@@ -4,6 +4,11 @@
   padding-left: 30px;
 }
 
+.introdegree > p {
+    padding-right: 200px;
+  padding-left: 200px;
+}
+
 .cadeiras {
   background-color: #c5ebfe;
   display: flex;
@@ -68,7 +73,7 @@
     border-radius: 10px;
     padding: 5px 10px 5px 10px;
     text-decoration: none;
-
+    margin-left: 230px;
 }
 
 .botaonovo:hover {

@@ -4,6 +4,10 @@
     background-color: #e8bde4;
 }
 
+.introblog > p {
+    padding-left: 200px;
+}
+
 .listaposts {
     background-color: #e8bde4;
     display: flex;
@@ -45,4 +49,29 @@ input[type="text"] {
 
 textarea {
     padding: 10px;
+}
+
+.botaomore {
+    margin-top: 10px;
+    width: 40px;
+    height: 10px;
+    border: 2px solid #7d7ff1;
+    background-color: #7d7ff1;
+    color: white;
+    border-radius: 10px;
+    padding: 2px 7px 2px 7px;
+    text-decoration: none;
+}
+
+.botaomore:hover {
+    cursor: pointer;
+    border: 2px solid #7d7ff1;
+    background-color: white;
+    color: #7d7ff1;
+}
+
+.botaomore:active {
+    border: 2px solid #5666d0;
+    background-color: #5666d0;
+    color: white;
 }

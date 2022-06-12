@@ -21,7 +21,7 @@
                     <p>{{ post.descricao }}
                     <br>
                     {% if post.link != null %}
-                        link: {{ post.link }}
+                        <a class = "botaomore" href="{{ tfc.imagem.url }}">More</a>
                     {% endif %}</p>
                     <br>
                     Post by {{ post.autor }} on {{ post.criado }}

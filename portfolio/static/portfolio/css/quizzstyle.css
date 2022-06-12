@@ -4,6 +4,10 @@
     background-color: #e8bde4;
 }
 
+.introquizz > p {
+    padding-left: 200px;
+}
+
 .quizz {
     background-color: white;
     display: block;
