@@ -38,7 +38,7 @@ def login_page_view(request):
 
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse('portfolio:degree'))
+            return HttpResponseRedirect(reverse('portfolio:aboutme'))
         else:
             return render(request, 'portfolio/aboutme.html', {
                 'message': 'Credenciais Inválidas'
@@ -49,7 +49,7 @@ def login_page_view(request):
 def logout_page_view(request):
     logout(request)
 
-    return render(request, 'portfolio/login.html', {
+    return render(request, 'portfolio/home.html', {
         'message': 'Desconectado'
     })
 
