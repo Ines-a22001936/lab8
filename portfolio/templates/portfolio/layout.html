@@ -35,7 +35,11 @@
             <a href="{% url 'portfolio:blog' %}">Blog</a>
             <a href="{% url 'portfolio:web' %}">Web</a>
             <a href="{% url 'portfolio:contact' %}">Contact</a>
-            <a class = "botaologinmenu" href="{% url 'portfolio:login' %}">Login</a>
+            {% if not request.user.is_authenticated %}
+                <a href="{% url 'portfolio:login' %}">Login</a>
+            {% else %}
+                <a href="{% url 'portfolio:logout' %}">Logout</a>
+            {% endif %}
         </nav>
     </header>
 
