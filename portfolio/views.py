@@ -164,7 +164,7 @@ def novacadeira_page_view(request):
     form = CadeiraForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect(reverse('portfolio:degree'))
+        return HttpResponseRedirect(reverse('portfolio:aboutme'))
 
     context = {'form': form}
 
