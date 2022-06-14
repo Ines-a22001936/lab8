@@ -1,9 +1,16 @@
+import base64
+import io
+import urllib
+
 import matplotlib
 from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+
+import urllib
+from urllib.parse import urlparse
 
 import datetime
 
@@ -90,8 +97,9 @@ def quizz_page_view(request):
         p = pontuacao_quizz(request)
         r = PontuacaoQuizz(nome=n, pontuacao=p)
         r.save()
-        desenha_grafico_resultados()
-    return render(request, 'portfolio/quizz.html')
+
+    context = {'data': desenha_grafico_resultados()}
+    return render(request, 'portfolio/quizz.html', context)
 
 
 def pontuacao_quizz(request):
@@ -125,19 +133,26 @@ def pontuacao_quizz(request):
 
 
 def desenha_grafico_resultados():
-    users = sorted(PontuacaoQuizz.objects.all(), key=lambda x: x.pontuacao)
-    nomes = []
-    pontuacoes = []
+    pontuacoes = PontuacaoQuizz.objects.all().order_by('pontuacao')
 
-    for user in users:
-        nomes.append(user.nome)
-        pontuacoes.append(user.pontuacao)
+    nameslist = [pontuacao.nome for pontuacao in pontuacoes]
+    scorelist = [pontuacao.pontuacao for pontuacao in pontuacoes]
 
-    nomes.reverse()
-    pontuacoes.reverse()
+    plt.barh(nameslist, scorelist)
+    plt.ylabel("Score")
+    plt.autoscale()
 
-    plt.barh(nomes, pontuacoes)
-    plt.savefig('portfolio/static/portfolio/images/graficopontuacoes.png', bbox_inches="tight")
+    fig = plt.gcf()
+    plt.close()
+
+    buf = io.BytesIO()
+    fig.savefig(buf, format='png')
+
+    buf.seek(0)
+    string = base64.b64encode(buf.read())
+    uri = urllib.parse.quote(string)
+
+    return uri
 
 
 def contact_page_view(request):
