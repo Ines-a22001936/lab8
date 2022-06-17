@@ -295,3 +295,18 @@
     width: 100%;
     padding-bottom: 10px;
 }
+
+.video {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: normal;
+}
+
+.video iframe {
+    border: solid #9695e2;
+    margin: 30px;
+    width: 1120px;
+    height: 630px;
+    border-radius: 15px 15px 15px 15px;
+}

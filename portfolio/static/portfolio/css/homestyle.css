@@ -29,14 +29,15 @@
 }
 
 article.primeiro {
-  height: 35vh;
   background: #e8bee4;
-  padding: 0 4vw;
+  padding: 2vw 4vw;
   text-align: center;
 }
 
 article.primeiro > p {
-  font-size: 25px;
+    background-color: #e8bee4;
+    font-size: 25px;
+    min-height: 25vh;
 }
 
 article.primeiro > p > b > i {
