@@ -59,7 +59,7 @@ class Cadeira(models.Model):
 class Projeto(models.Model):
     nome = models.CharField(max_length=50, primary_key=True)
     cadeira = models.ManyToManyField(Cadeira, related_name='tem')
-    imagem = models.ImageField()
+    imagem = models.ImageField(upload_to='static/portfolio/images')
     descricao = models.TextField()
 
     def __str__(self):
@@ -74,7 +74,7 @@ class TFC(models.Model):
     ano = models.IntegerField()
     resumo = models.TextField()
     link = models.URLField(blank=True)
-    imagem = models.ImageField()
+    imagem = models.ImageField(upload_to='static/portfolio/images')
 
     def __str__(self):
         return self.titulo[:50]
