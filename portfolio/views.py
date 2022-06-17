@@ -17,7 +17,6 @@ import datetime
 from portfolio.forms import PostForm, CadeiraForm, ProjetoForm, TFCForm
 from portfolio.models import *
 
-
 from matplotlib import pyplot as plt
 
 matplotlib.use('Agg')
@@ -45,7 +44,7 @@ def login_page_view(request):
 
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse('portfolio:aboutme'))
+            return HttpResponseRedirect(reverse('portfolio:home'))
         else:
             return render(request, 'portfolio/aboutme.html', {
                 'message': 'Credenciais Inválidas'
@@ -173,7 +172,7 @@ def novacadeira_page_view(request):
 
 @login_required
 def novoprojeto_page_view(request):
-    form = ProjetoForm(request.POST or None)
+    form = ProjetoForm(request.POST, request.FILES or None)
     if form.is_valid():
         form.save()
         return HttpResponseRedirect(reverse('portfolio:projects'))
@@ -185,7 +184,7 @@ def novoprojeto_page_view(request):
 
 @login_required
 def novotfc_page_view(request):
-    form = TFCForm(request.POST or None)
+    form = TFCForm(request.POST, request.FILES or None)
     if form.is_valid():
         form.save()
         return HttpResponseRedirect(reverse('portfolio:projects'))
