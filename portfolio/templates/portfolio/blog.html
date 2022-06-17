@@ -21,7 +21,7 @@
                     <p>{{ post.descricao }}
                     <br>
                     <br>
-                    {% if post.link != null %}
+                    {% if post.link != null or post.link != "" %}
                         <a class = "botaomore" href="{{ post.link }}">More</a>
                     {% endif %}</p>
                     <br>
